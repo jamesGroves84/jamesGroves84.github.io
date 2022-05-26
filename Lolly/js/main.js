@@ -39,7 +39,7 @@ function getImgs() {
             carouselItem.classList.add('carousel-item');
             // carouselItem.setAttribute("data-bs-interval","500");
 
-            carouselItem.innerHTML ='<img class="d-block w-100 h-100" src="'+this.result+'">';
+            carouselItem.innerHTML ='<img class="d-block w-100" src="'+this.result+'">';
             carouselInner.appendChild(carouselItem); 
         });
     };
