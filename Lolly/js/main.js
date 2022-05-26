@@ -6,6 +6,8 @@ window.onload = () => {
         navigator.serviceWorker
             .register('/Lolly/sw.js', {scope: '/Lolly/'});
     }
+
+    const carousel = new bootstrap.Carousel('#carouselWrappy');
 }
 // End //
 
@@ -50,6 +52,5 @@ function getImgs() {
 function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
-    const carousel = new bootstrap.Carousel('#carouselWrappy');
 }
 // End Image Select //
