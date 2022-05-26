@@ -17,12 +17,12 @@ document.getElementById('imgPicker').addEventListener('change', function(){
 function getImgs() {
     var imgs = document.getElementById('imgPicker').files;
 
-    imgs.forEach((img) => {
+    for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
-        imageReader.readAsDataURL(img);
+        imageReader.readAsDataURL(imgs[i]);
         imageReader.addEventListener('load', function() {
             document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />';
         });
-    });
+    };
 };
 // End Image Select //
