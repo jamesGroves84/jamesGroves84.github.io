@@ -26,9 +26,6 @@ function getImgs() {
 
     var carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
-    carouselInner.classList.add('d-flex');
-    carouselInner.classList.add('justify-content-center');
-    carouselInner.classList.add('align-items-center');
 
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
@@ -53,6 +50,9 @@ function getImgs() {
 function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
-    const carousel = new bootstrap.Carousel('#carouselWrappy');
 }
 // End Image Select //
+
+function startCarousel() {
+    const carousel = new bootstrap.Carousel('#carouselWrappy');
+}
