@@ -14,10 +14,12 @@ document.getElementById('imgPicker').addEventListener('change', function(){
     getImgs();
 });
 
-function getImgs(evt) {
-    evt.target.files.forEach(element => {
+function getImgs() {
+    let imgs = document.getElementById('imgPicker').files;
+
+    imgs.forEach(img => {
         const imageReader = new FileReader();
-        imageReader.readAsDataURL(element);
+        imageReader.readAsDataURL(img);
         imageReader.addEventListener('load', function() {
             document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />'
         });
