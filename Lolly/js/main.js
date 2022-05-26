@@ -17,14 +17,31 @@ document.getElementById('imgPicker').addEventListener('change', function(){
 function getImgs() {
     var imgs = document.getElementById('imgPicker').files;
 
+    // document.getElementById('carousel-container').innerHTML = '<div class="carousel slide" data-ride="carousel"><div id="imageFrame" class="carousel-inner"></div></div>';
+
+    var carouselWrap = document.createElement('div');
+    carouselWrap.classList.add('carousel');
+    carouselWrap.classList.add('slide');
+    carouselWrap.setAttribute("data-ride","carousel");
+
+    var carouselInner = document.createElement('div');
+    carouselInner.classList.add('carousel-inner');
+
     for(var i = 0; i < imgs.length; i++) {
         var firstImg = (i == 0) ? ' active ' : '';
-        console.log(firstImg +  'on ' + imgs[i].name);
+
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
         imageReader.addEventListener('load', function() {
-            document.getElementById('imageFrame').innerHTML += '<div class="carousel-item '+firstImg+'"><img class="img-fluid d-block w-100" src="'+this.result+'" />';
+            var carouselItem = document.createElement('div')
+            carouselItem.classList.add('carousel-item');
+            carouselItem.classList.add(firstImg);
+            carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
+            carouselInner.appendChild(carouselItem);
         });
     };
+
+    carouselWrap.appendChild(carouselInner);
+    document.getElementById('carousel-container').appendChild(carouselWrap);
 };
 // End Image Select //
