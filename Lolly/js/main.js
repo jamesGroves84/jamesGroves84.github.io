@@ -21,7 +21,7 @@ function getImgs() {
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
         imageReader.addEventListener('load', function() {
-            document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />';
+            document.getElementById('imageFrame').innerHTML += '<div class="carousel-item"><img class="d-block w-100" src="'+this.result+'" />';
         });
     };
 };
