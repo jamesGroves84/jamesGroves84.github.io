@@ -22,7 +22,7 @@ function readMultipleFiles(evt) {
          r.onload = (function(f) {
              return function(e) {
                  var contents = e.target.result;
-                 $('body').append('<h2>' + f.name + '</h2><img src="learn/' + f.name + '"/>');
+                 document.getElementsById('imageFrame').innerHTML+='<h2>' + f.name + '</h2><img src="learn/' + f.name + '"/>';
              };
          })(f);
 
