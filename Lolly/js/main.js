@@ -9,6 +9,10 @@ window.onload = () => {
 }
 // End //
 
-// Start set Image Dir //
-var imageDir = '/Lolly/images/tmpDisplay/';
+// Start Select Images //
+document.getElementById('imgPicker').addEventListener('change', readMultipleFiles, false);
+
+function readMultipleFiles(evt) {
+
+}
 //
