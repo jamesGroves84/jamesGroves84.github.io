@@ -1,6 +1,7 @@
 {
     "name": "Lolly Picture Slideshow",
-    "short_name": "The Lolly Picture Slideshow, turn any device into a digital photo frame",
+    "short_name": "Lolly",
+    "description": "The Lolly Picture Slideshow, turn any device into a digital photo frame",
     "lang": "en-GB",
     "start_url": "/Lolly/index.htm",
     "scope": "/Lolly/",
