@@ -35,16 +35,16 @@ function getImgs() {
 
         var carouselItem = document.createElement('div')
         carouselItem.classList.add('carousel-item');
+        console.log('Adding image '+ i);
         if(i == 0) carouselItem.classList.add('active');
 
         imageReader.addEventListener('load', function() {
             
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
-            carouselInner.appendChild(carouselItem);
             
         });
 
-        console.log('added image '+ i);
+        carouselInner.appendChild(carouselItem);
     };
 
     carouselWrap.appendChild(carouselInner);
