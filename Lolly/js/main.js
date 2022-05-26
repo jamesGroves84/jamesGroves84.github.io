@@ -11,13 +11,12 @@ window.onload = () => {
 
 // Start Select Images //
 document.getElementById('imgPicker').addEventListener('change', function(){
+    document.getElementById('carousel-container').innerHTML = '';
     getImgs();
 });
 
 function getImgs() {
     var imgs = document.getElementById('imgPicker').files;
-
-    // document.getElementById('carousel-container').innerHTML = '<div class="carousel slide" data-ride="carousel"><div id="imageFrame" class="carousel-inner"></div></div>';
 
     var carouselWrap = document.createElement('div');
     carouselWrap.classList.add('carousel');
@@ -28,22 +27,17 @@ function getImgs() {
     carouselInner.classList.add('carousel-inner');
 
     for(var i = 0; i < imgs.length; i++) {
-        // var firstImg = (i == 0) ? ' active ' : '';
-
-        var carouselItem = document.createElement('div')
-        carouselItem.classList.add('carousel-item');
-        if(i == 1) carouselItem.classList.add('active');
-
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
 
         imageReader.addEventListener('load', function() {
-            
-            carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
-            
-        });
+            var carouselItem = document.createElement('div')
+            carouselItem.classList.add('carousel-item');
+            if(i == 1) carouselItem.classList.add('active');
 
-        carouselInner.appendChild(carouselItem);
+            carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
+            carouselInner.appendChild(carouselItem); 
+        });
     };
 
     carouselWrap.appendChild(carouselInner);
