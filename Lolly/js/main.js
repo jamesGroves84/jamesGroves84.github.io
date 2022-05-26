@@ -21,7 +21,7 @@ function getImgs() {
     var carouselWrap = document.createElement('div');
     carouselWrap.classList.add('carousel');
     carouselWrap.classList.add('slide');
-    carouselWrap.setAttribute("data-ride","carousel");
+    carouselWrap.setAttribute("data-bs-ride","carousel");
 
     var carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
