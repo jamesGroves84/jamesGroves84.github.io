@@ -4,7 +4,7 @@ window.onload = () => {
 
     if('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('/Lolly-sw.js');
+            .register('/Lolly/sw.js', {scope: '/Lolly/'});
     }
 }
 // End //
