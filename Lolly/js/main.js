@@ -18,10 +18,11 @@ function getImgs() {
     var imgs = document.getElementById('imgPicker').files;
 
     for(var i = 0; i < imgs.length; i++) {
+        var isActive = (i == 0) ? ' active ' : '';
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
         imageReader.addEventListener('load', function() {
-            document.getElementById('imageFrame').innerHTML += '<div class="carousel-item"><img class="d-block w-100" src="'+this.result+'" />';
+            document.getElementById('imageFrame').innerHTML += '<div class="carousel-item '+isActive+'"><img class="img-fluid d-block w-100" src="'+this.result+'" />';
         });
     };
 };
