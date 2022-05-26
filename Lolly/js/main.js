@@ -32,14 +32,19 @@ function getImgs() {
 
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
+
+        var carouselItem = document.createElement('div')
+        carouselItem.classList.add('carousel-item');
+        if(i == 0) carouselItem.classList.add('active');
+
         imageReader.addEventListener('load', function() {
-            var carouselItem = document.createElement('div')
-            carouselItem.classList.add('carousel-item');
-            if(i == 0) carouselItem.classList.add('active');
+            
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
             carouselInner.appendChild(carouselItem);
-            console.log('added image '+ i);
+            
         });
+
+        console.log('added image '+ i);
     };
 
     carouselWrap.appendChild(carouselInner);
