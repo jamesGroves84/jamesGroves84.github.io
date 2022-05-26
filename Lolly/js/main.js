@@ -17,11 +17,11 @@ document.getElementById('imgPicker').addEventListener('change', function(){
 function getImgs() {
     let imgs = document.getElementById('imgPicker').files;
 
-    imgs.forEach(img => {
+    imgs.forEach((img) => {
         const imageReader = new FileReader();
         imageReader.readAsDataURL(img);
         imageReader.addEventListener('load', function() {
-            document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />'
+            document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />';
         });
     });
 };
