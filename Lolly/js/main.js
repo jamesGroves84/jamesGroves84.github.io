@@ -55,4 +55,5 @@ function setActiveImg(){
 
 function startCarousel() {
     const carousel = new bootstrap.Carousel('#carouselWrappy');
+    document.body.focus();
 }
