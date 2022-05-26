@@ -1,6 +1,7 @@
 {
     "name": "Lolly Picture Slideshow",
     "short_name": "Lolly",
+    "app_name": "Lolly",
     "description": "The Lolly Picture Slideshow, turn any device into a digital photo frame",
     "lang": "en-GB",
     "start_url": "/Lolly/index.htm",
@@ -58,5 +59,6 @@
         "purpose": "maskable any"
       }],
     "screenshots": [{}],
-    "orientation": "any"
+    "orientation": "any",
+    "categories": ["Digital photo frame", "picture", "slideshow"]
 }
