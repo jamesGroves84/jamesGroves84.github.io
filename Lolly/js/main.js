@@ -38,6 +38,7 @@ function getImgs() {
             if(i == 0) carouselItem.classList.add('active');
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
             carouselInner.appendChild(carouselItem);
+            console.log('added image '+ i);
         });
     };
 
