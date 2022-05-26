@@ -28,14 +28,14 @@ function getImgs() {
     carouselInner.classList.add('carousel-inner');
 
     for(var i = 0; i < imgs.length; i++) {
-        var firstImg = (i == 0) ? ' active ' : '';
+        // var firstImg = (i == 0) ? ' active ' : '';
 
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            if(firstImg !='') carouselItem.classList.add(firstImg);
+            if(i == 0) carouselItem.classList.add('active');
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
             carouselInner.appendChild(carouselItem);
         });
