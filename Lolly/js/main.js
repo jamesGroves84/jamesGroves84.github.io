@@ -28,6 +28,9 @@ function getImgs() {
 
     var carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
+    carouselInner.classList.add('d-flex');
+    carouselInner.classList.add('justify-content-center');
+    carouselInner.classList.add('align-items-center');
 
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
@@ -36,7 +39,7 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            carouselItem.setAttribute("data-bs-interval","500");
+            // carouselItem.setAttribute("data-bs-interval","500");
 
             carouselItem.innerHTML ='<img class="d-block w-100 h-100" src="'+this.result+'">';
             carouselInner.appendChild(carouselItem); 
