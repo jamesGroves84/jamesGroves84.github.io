@@ -15,7 +15,7 @@ document.getElementById('imgPicker').addEventListener('change', function(){
 });
 
 function getImgs() {
-    let imgs = document.getElementById('imgPicker').files;
+    var imgs = document.getElementById('imgPicker').files;
 
     imgs.forEach((img) => {
         const imageReader = new FileReader();
