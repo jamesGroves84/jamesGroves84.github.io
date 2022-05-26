@@ -35,7 +35,7 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            carouselItem.classList.add(firstImg);
+            if(firstImg) carouselItem.classList.add(firstImg);
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
             carouselInner.appendChild(carouselItem);
         });
