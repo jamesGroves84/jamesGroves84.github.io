@@ -32,8 +32,7 @@ function getImgs() {
 
         var carouselItem = document.createElement('div')
         carouselItem.classList.add('carousel-item');
-        console.log('Adding image '+ i);
-        if(i == 0) carouselItem.classList.add('active');
+        if(i == 1) carouselItem.classList.add('active');
 
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
