@@ -10,26 +10,17 @@ window.onload = () => {
 // End //
 
 // Start Select Images //
-document.getElementById('imgPicker').addEventListener('change', readMultipleFiles, false);
+document.getElementById('imgPicker').addEventListener('change', function(){
+    getImgs();
+});
 
-function readMultipleFiles(evt) {
- //Retrieve all the files from the FileList object
- var files = evt.target.files; 
-
- if (files) {
-     for (var i=0, f; f=files[i]; i++) {
-           var r = new FileReader();
-         r.onload = (function(f) {
-             return function(e) {
-                 var contents = e.target.result;
-                 document.getElementById('imageFrame').innerHTML+='<h2>' + f.name + '</h2><img src="learn/' + f.name + '"/>';
-             };
-         })(f);
-
-         r.readAsText(f);
-     }   
- } else {
-       alert("Failed to load files"); 
- }
-}
-//
+function getImgs(evt) {
+    evt.target.files.forEach(element => {
+        const imageReader = new FileReader();
+        imageReader.readAsDataURL(element);
+        imageReader.addEventListener('load', function() {
+            document.getElementById('imageFrame').innerHTML += '<img src="'+this.result+'" />'
+        });
+    });
+};
+// End Image Select //
