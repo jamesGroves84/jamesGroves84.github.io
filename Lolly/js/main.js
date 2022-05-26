@@ -33,7 +33,6 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            if(i == 1) carouselItem.classList.add('active');
 
             carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
             carouselInner.appendChild(carouselItem); 
@@ -42,5 +41,8 @@ function getImgs() {
 
     carouselWrap.appendChild(carouselInner);
     document.getElementById('carousel-container').appendChild(carouselWrap);
+
+    // Set first image as active
+    document.getElementsByClassName('carousel-item')[0].classList.add('active');
 };
 // End Image Select //
