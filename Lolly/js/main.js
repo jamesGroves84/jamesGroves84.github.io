@@ -30,13 +30,13 @@ function getImgs() {
     for(var i = 0; i < imgs.length; i++) {
         // var firstImg = (i == 0) ? ' active ' : '';
 
-        const imageReader = new FileReader();
-        imageReader.readAsDataURL(imgs[i]);
-
         var carouselItem = document.createElement('div')
         carouselItem.classList.add('carousel-item');
         console.log('Adding image '+ i);
         if(i == 0) carouselItem.classList.add('active');
+
+        const imageReader = new FileReader();
+        imageReader.readAsDataURL(imgs[i]);
 
         imageReader.addEventListener('load', function() {
             
