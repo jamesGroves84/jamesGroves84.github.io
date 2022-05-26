@@ -36,7 +36,7 @@ function getImgs() {
             carouselItem.classList.add('carousel-item');
             carouselItem.setAttribute("data-bs-interval","500");
 
-            carouselItem.innerHTML ='<img class="d-block w-100" src="'+this.result+'">';
+            carouselItem.innerHTML ='<img class="d-block w-100 h-100" src="'+this.result+'">';
             carouselInner.appendChild(carouselItem); 
         });
     };
@@ -50,5 +50,6 @@ function getImgs() {
 function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
+    const carousel = new bootstrap.Carousel('#carouselWrappy');
 }
 // End Image Select //
