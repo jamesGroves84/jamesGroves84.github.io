@@ -19,6 +19,7 @@ function getImgs() {
     var imgs = document.getElementById('imgPicker').files;
 
     var carouselWrap = document.createElement('div');
+    carouselWrap.id = 'carouselWrappy';
     carouselWrap.classList.add('carousel');
     carouselWrap.classList.add('slide');
     carouselWrap.setAttribute("data-bs-ride","carousel");
@@ -33,8 +34,9 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
+            carouselItem.setAttribute("data-bs-interval","500");
 
-            carouselItem.innerHTML ='<img class="img-fluid d-block w-100" src="'+this.result+'" />';
+            carouselItem.innerHTML ='<img class="d-block w-100" src="'+this.result+'">';
             carouselInner.appendChild(carouselItem); 
         });
     };
