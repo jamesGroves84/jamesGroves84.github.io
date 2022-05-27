@@ -43,13 +43,21 @@ function getImgs() {
 
     carouselWrap.appendChild(carouselInner);
     document.getElementById('carousel-container').appendChild(carouselWrap);
+
+    setTimeout(setActiveImg, 2500);
 };
+
+function setActiveImg(){
+    // Set first image as active
+    document.getElementsByClassName('carousel-item')[0].classList.add('active');
+    const toastPlay = document.getElementById('playShowToast')
+    const toast = new bootstrap.Toast(toastPlay)
+
+    toast.show()
+}
 // End Image Select //
 
 function startCarousel() {
     const carousel = new bootstrap.Carousel('#carouselWrappy');
-    
-    // Set first image as active
-    document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.body.focus();
 }
