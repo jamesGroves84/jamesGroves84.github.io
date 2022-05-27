@@ -24,8 +24,21 @@
     <body class="bg-dark text-white">
         <div class="container">
             <h1>Lolly Digital Photo Frame</h1>
-            <input type="file" id="imgPicker" multiple hidden>
-            <label for="imgPicker" class="btn-primary p-3">Choose Images</label>
+            <input type="file" id="imgPicker" multiple hidden accept="image/*">
+            <label for="imgPicker" class="btn btn-primary p-2">Choose Photos</label>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <h2>Welcome to the Lolly Digitial Photo Frame</h2>
+                    <p>To get started, click Choose Photos and select as many images as you want.</p>
+                    <p>Once the images have loaded, simply click Start Slideshow below.</p>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-primary" onclick="javascript:startCarousel();">Start Slideshow</button>
+                </div>
+            </div>
         </div>
 
         <div id="carousel-container" class="container"></div>
