@@ -15,6 +15,6 @@
 .carousel-item img {
     width: 100vw;
     height: 100vh;
-    object-fit: fill;
+    object-fit: scale-down;
     object-position: 50% 50%;
 }
