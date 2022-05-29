@@ -27,7 +27,7 @@
 }
 
 .blap {
-    bottom: 5px;
-    transition: bottom .25s ease-in-out;
-    z-index: 2000;
+    bottom: 5px!important;
+    transition: bottom .25s ease-in-out!important;
+    z-index: 2000!important;
 }

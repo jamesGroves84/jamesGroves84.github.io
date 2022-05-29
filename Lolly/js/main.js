@@ -101,3 +101,7 @@ function startCarousel() {
     const carousel = new bootstrap.Carousel('#carouselWrappy');
     document.body.focus();
 }
+
+function endShow() {
+    document.getElementById('carouselWrappy').remove();
+}
