@@ -93,7 +93,7 @@ function getImgs() {
 function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
-    document.getElementById('endSlideShow').classList.add('shown');
+    document.getElementById('endSlideshow').classList.add('shown');
 }
 // End Image Select //
 
