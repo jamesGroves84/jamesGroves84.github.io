@@ -69,7 +69,7 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            // carouselItem.setAttribute("data-bs-interval","500");
+            carouselItem.setAttribute("data-bs-interval","500");
 
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
@@ -99,10 +99,9 @@ function setActiveImg(){
 
 function startCarousel() {
     const carousel = new bootstrap.Carousel('#carouselWrappy');
-    document.body.focus();
 }
 
 function endShow() {
-    document.getElementById('carouselWrappy').remove();
+    document.getElementById('carousel-container').removeChild(document.getElementById('carouselWrappy'));
     document.getElementById('endSlideshow').classList.remove('blap');
 }
