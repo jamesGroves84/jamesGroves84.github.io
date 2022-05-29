@@ -6,7 +6,7 @@
     "lang": "en-GB",
     "start_url": "/Lolly/index.htm",
     "scope": "/Lolly/",
-    "display": "standalone",
+    "display": "fullscreen",
     "theme_color": "#000000",
     "background_color": "#000000",
     "shortcuts": [{}],

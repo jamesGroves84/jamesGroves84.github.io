@@ -63,6 +63,7 @@ function getImgs() {
 
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
+        imageReader.fileName = imgs[i].name;
         imageReader.readAsDataURL(imgs[i]);
 
         imageReader.addEventListener('load', function() {
@@ -70,7 +71,7 @@ function getImgs() {
             carouselItem.classList.add('carousel-item');
             // carouselItem.setAttribute("data-bs-interval","500");
 
-            carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'">';
+            carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselInner.appendChild(carouselItem); 
         });
     };
