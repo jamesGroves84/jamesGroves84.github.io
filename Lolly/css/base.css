@@ -17,4 +17,5 @@
     height: 100vh;
     object-fit: scale-down;
     object-position: 50% 50%;
+    backdrop-filter: blur(8px) opacity(50%);
 }

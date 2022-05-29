@@ -73,7 +73,6 @@ function getImgs() {
 
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
-            carouselItem.style.filter = "blur(8px)";
           
             /* Center and scale the image nicely */
             carouselItem.style.backgroundPosition = "center";
