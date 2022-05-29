@@ -94,6 +94,7 @@ function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
+    document.getElementById('endSlideshow').focus();
 }
 // End Image Select //
 
