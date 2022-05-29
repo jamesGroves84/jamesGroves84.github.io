@@ -27,6 +27,40 @@ function getImgs() {
     var carouselInner = document.createElement('div');
     carouselInner.classList.add('carousel-inner');
 
+    var carouselNextButton = document.createElement('button');
+    carouselNextButton.classList.add('carousel-control-next'); 
+    carouselNextButton.type='button'; 
+    carouselNextButton.setAttribute('data-bs-target','#carouselWrappy');
+    carouselNextButton.setAttribute('data-bs-slide','next');
+
+    var carouselNextContent1 = document.createElement('span');
+    carouselNextContent1.classList.add('carousel-control-next-icon'); 
+    carouselNextContent1.setAttribute('aria-hidden','true');
+
+    var carouselNextContent2 = document.createElement('span'); 
+    carouselNextContent2.classList.add('visually-hidden');
+    carouselNextContent2.innerHTML = 'Next';
+
+    carouselNextButton.appendChild(carouselNextContent1);
+    carouselNextButton.appendChild(carouselNextContent2);
+
+    var carouselPrevButton = document.createElement('button');
+    carouselPrevButton.classList.add('carousel-control-prev'); 
+    carouselPrevButton.type='button'; 
+    carouselPrevButton.setAttribute('data-bs-target','#carouselWrappy');
+    carouselPrevButton.setAttribute('data-bs-slide','prev');
+
+    var carouselPrevContent1 = document.createElement('span');
+    carouselPrevContent1.classList.add('carousel-control-prev-icon'); 
+    carouselPrevContent1.setAttribute('aria-hidden','true');
+
+    var carouselPrevContent2 = document.createElement('span'); 
+    carouselPrevContent2.classList.add('visually-hidden');
+    carouselPrevContent2.innerHTML = 'Previous';
+
+    carouselPrevButton.appendChild(carouselPrevContent1);
+    carouselPrevButton.appendChild(carouselPrevContent2);
+
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
         imageReader.readAsDataURL(imgs[i]);
@@ -42,9 +76,11 @@ function getImgs() {
     };
 
     carouselWrap.appendChild(carouselInner);
+    carouselWrap.appendChild(carouselPrevButton);
+    carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
 
-    setTimeout(setActiveImg, 2500);
+    setTimeout(setActiveImg, 500);
 };
 
 function setActiveImg(){
