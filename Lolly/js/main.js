@@ -104,4 +104,5 @@ function startCarousel() {
 
 function endShow() {
     document.getElementById('carouselWrappy').remove();
+    document.getElementById('endSlideshow').classList.remove('blap');
 }
