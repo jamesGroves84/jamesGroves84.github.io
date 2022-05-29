@@ -20,10 +20,10 @@
     backdrop-filter: blur(50px);
 }
 
-#endSlideShow.blap {
-    bottom: 5px!important;
+#endSlideShow .blap {
+    bottom: 5px;
     transition: bottom .25s ease-in-out;
-    z-index: 2000!important;
+    z-index: 2000;
 }
 
 #endSlideshow {
