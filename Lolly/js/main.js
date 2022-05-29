@@ -72,13 +72,13 @@ function getImgs() {
             // carouselItem.setAttribute("data-bs-interval","500");
 
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
-            carouselInner.style.backgroundImage = "url('"+this.result+"')";
-            carouselInner.style.filter = "blur(8px)";
+            carouselItem.style.backgroundImage = "url('"+this.result+"')";
+            carouselItem.style.filter = "blur(8px)";
           
             /* Center and scale the image nicely */
-            carouselInner.style.backgroundPosition = "center";
-            carouselInner.style.backgroundRepeat = "no-repeat";
-            carouselInner.style.backgroundSize = "cover";
+            carouselItem.style.backgroundPosition = "center";
+            carouselItem.style.backgroundRepeat = "no-repeat";
+            carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
         });
     };
