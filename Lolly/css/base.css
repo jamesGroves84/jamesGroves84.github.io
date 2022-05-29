@@ -22,5 +22,11 @@
 
 #endSlideshow {
     position: fixed;
-    bottom: 0;
+    bottom: -50px;
+    transition: bottom .25s ease-in-out;
+}
+
+#endSlideShow.shown {
+    bottom: 5px;
+    transition: bottom .25s ease-in-out;
 }
