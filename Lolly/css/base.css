@@ -29,4 +29,5 @@
 #endSlideShow.shown {
     bottom: 5px;
     transition: bottom .25s ease-in-out;
+    z-index: 2000;
 }
