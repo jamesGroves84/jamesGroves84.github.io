@@ -20,14 +20,14 @@
     backdrop-filter: blur(50px);
 }
 
-#endSlideShow .blap {
-    bottom: 5px;
-    transition: bottom .25s ease-in-out;
-    z-index: 2000;
-}
-
 #endSlideshow {
     position: fixed;
     bottom: -50px;
     transition: bottom .25s ease-in-out;
+}
+
+.blap {
+    bottom: 5px;
+    transition: bottom .25s ease-in-out;
+    z-index: 2000;
 }
