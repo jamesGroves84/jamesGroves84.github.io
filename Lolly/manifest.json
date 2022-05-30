@@ -58,7 +58,6 @@
         "type": "image/png",
         "purpose": "maskable any"
       }],
-    "screenshots": [{}],
     "orientation": "any",
-    "categories": ["Digital photo frame", "picture", "slideshow"]
+    "categories": ["Digital photo frame", "picture", "slideshow", "photo", "display"]
 }
