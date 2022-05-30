@@ -69,7 +69,6 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
-            carouselItem.setAttribute("data-bs-interval","500");
 
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
@@ -94,7 +93,6 @@ function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
-    document.getElementById('endSlideshow').focus();
 }
 // End Image Select //
 
