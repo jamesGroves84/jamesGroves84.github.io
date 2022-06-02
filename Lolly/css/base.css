@@ -32,9 +32,16 @@
     z-index: 2000!important;
 }
 
-progress {
-    width: 100%;
-    z-index: 1020;
+.imageLoader {
     position: fixed;
     bottom: 0;
+    width: 100vw;
+    max-width: 100%;
+    color: #ffffff;
+}
+
+progress {
+    display: block;
+    width: 100%;
+    z-index: 1020;
 }
