@@ -79,6 +79,13 @@ function getImgs() {
             carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
         });
+
+        imageReader.addEventListener('progress', function(){
+            if (this.lengthComputable) {                                            
+                var progress = parseInt( ((this.loaded / this.total) * 100), 10 );
+                console.log(progress);
+            }
+        });
     };
 
     carouselWrap.appendChild(carouselInner);
