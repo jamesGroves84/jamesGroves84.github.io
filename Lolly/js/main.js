@@ -78,6 +78,7 @@ function getImgs() {
             carouselItem.style.backgroundRepeat = "no-repeat";
             carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
+            document.querySelector('.imageLoader').classList.add('shown');
         });
 
         imageReader.addEventListener('progress', function(data){
@@ -90,6 +91,7 @@ function getImgs() {
 
         imageReader.addEventListener('loadend', function(){
             setActiveImg();
+            document.querySelector('.imageLoader').classList.remove('shown');
         });
     };
 
@@ -103,7 +105,7 @@ function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
-    document.querySelector('.imageLoader').classList.remove('shown');
+
     const carousel = new bootstrap.Carousel('#carouselWrappy');
     carousel.cycle(); // Start the Carousel
 }
