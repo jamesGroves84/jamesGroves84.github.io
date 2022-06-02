@@ -83,7 +83,7 @@ function getImgs() {
         imageReader.addEventListener('progress', function(data){
             if (data.lengthComputable) {                                            
                 var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-                document.getElementById('imageLoading').innerHTML = "Loading: "+data.name;
+                document.getElementById('imageLoading').innerHTML = "Loading: "+data.fileName;
                 document.getElementById('progressbar').value = progress;
             }
         });
