@@ -83,7 +83,8 @@ function getImgs() {
         imageReader.addEventListener('progress', function(data){
             if (data.lengthComputable) {                                            
                 var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-                console.log(progress);
+                document.getElementById('imageLoading').textContent = "Loading: "+data.name;
+                document.getElementById('progressbar').value = progress;
             }
         });
     };
@@ -108,6 +109,10 @@ function startCarousel() {
 }
 
 function endShow() {
+    // Destroy the Slideshow
     document.getElementById('carousel-container').removeChild(document.getElementById('carouselWrappy'));
+    // Hide the Exit Slideshow button
     document.getElementById('endSlideshow').classList.remove('blap');
+    // Clear the Selected Files list
+    document.getElementById('imgPicker').files = [];
 }
