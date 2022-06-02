@@ -80,9 +80,9 @@ function getImgs() {
             carouselInner.appendChild(carouselItem); 
         });
 
-        imageReader.addEventListener('progress', function(){
-            if (this.lengthComputable) {                                            
-                var progress = parseInt( ((this.loaded / this.total) * 100), 10 );
+        imageReader.addEventListener('progress', function(data){
+            if (data.lengthComputable) {                                            
+                var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
                 console.log(progress);
             }
         });
