@@ -61,6 +61,8 @@ function getImgs() {
     carouselPrevButton.appendChild(carouselPrevContent1);
     carouselPrevButton.appendChild(carouselPrevContent2);
 
+    document.querySelector('.imageLoader').classList.add('shown');
+
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
         imageReader.fileName = imgs[i].name;
@@ -86,6 +88,10 @@ function getImgs() {
                 document.getElementById('imageLoading').innerHTML = "Loading: "+data.fileName;
                 document.getElementById('progressbar').value = progress;
             }
+        });
+
+        imageReader.addEventListener('loaded', function(){
+            document.querySelector('.imageLoader').classList.remove('shown');
         });
     };
 

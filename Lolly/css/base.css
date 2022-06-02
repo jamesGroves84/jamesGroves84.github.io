@@ -38,6 +38,11 @@
     width: 100vw;
     max-width: 100%;
     color: #ffffff;
+    display: none;
+}
+
+.imageLoader .shown {
+    display: block;
 }
 
 progress {
