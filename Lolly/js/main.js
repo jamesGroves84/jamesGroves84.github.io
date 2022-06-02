@@ -104,12 +104,10 @@ function setActiveImg(){
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
     document.querySelector('.imageLoader').classList.remove('shown');
+    const carousel = new bootstrap.Carousel('#carouselWrappy');
+    carousel.pause = false; // Stop it from pausing when hover
 }
 // End Image Select //
-
-function startCarousel() {
-    const carousel = new bootstrap.Carousel('#carouselWrappy');
-}
 
 function endShow() {
     // Destroy the Slideshow
