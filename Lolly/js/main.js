@@ -63,8 +63,9 @@ function getImgs() {
 
     document.querySelector('.imageLoader').classList.add('shown');
 
+    const imageReader = new FileReader();
+    
     for(var i = 0; i < imgs.length; i++) {
-        const imageReader = new FileReader();
         imageReader.fileName = imgs[i].name;
         imageReader.readAsDataURL(imgs[i]);
 
