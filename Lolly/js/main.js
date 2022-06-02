@@ -90,7 +90,6 @@ function getImgs() {
         });
 
         imageReader.addEventListener('loadend', function(){
-            setActiveImg();
             document.querySelector('.imageLoader').classList.remove('shown');
         });
     };
@@ -99,6 +98,7 @@ function getImgs() {
     carouselWrap.appendChild(carouselPrevButton);
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
+    setActiveImg();
 };
 
 function setActiveImg(){
