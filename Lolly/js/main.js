@@ -63,19 +63,29 @@ function getImgs() {
 
     document.querySelector('.imageLoader').classList.add('shown');
 
+    var carouselItem = document.createElement('div')
+    carouselItem.classList.add('carousel-item');
+
     const imageReader = new FileReader();
-    
     for(var i = 0; i < imgs.length; i++) {
         imageReader.fileName = imgs[i].name;
         imageReader.readAsDataURL(imgs[i]);
 
         imageReader.addEventListener('load', function() {
-            var carouselItem = document.createElement('div')
-            carouselItem.classList.add('carousel-item');
-
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
-          
+            if(i == 0) carouselItem.classList.add('active');
+        });
+
+        imageReader.addEventListener('progress', function(data){
+            if (data.lengthComputable) {                                            
+                var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
+                document.getElementById('imageLoading').innerHTML = "Loading: "+this.fileName;
+                document.getElementById('progressbar').value = progress;
+            }
+        });
+
+        imageReader.addEventListener('loadend', function(){
             /* Center and scale the image nicely */
             carouselItem.style.backgroundPosition = "center";
             carouselItem.style.backgroundRepeat = "no-repeat";
@@ -88,18 +98,6 @@ function getImgs() {
     carouselWrap.appendChild(carouselPrevButton);
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
-
-    imageReader.addEventListener('progress', function(data){
-        if (data.lengthComputable) {                                            
-            var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-            document.getElementById('imageLoading').innerHTML = "Loading: "+this.fileName;
-            document.getElementById('progressbar').value = progress;
-        }
-    });
-
-    imageReader.addEventListener('loadend', function(){
-        setActiveImg();
-    });
 };
 
 function setActiveImg(){
