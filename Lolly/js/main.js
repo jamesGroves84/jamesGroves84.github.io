@@ -105,6 +105,7 @@ function setActiveImg(){
     document.getElementById('endSlideshow').classList.add('blap');
     document.querySelector('.imageLoader').classList.remove('shown');
     const carousel = new bootstrap.Carousel('#carouselWrappy');
+    carousel.cycle(); // Start the Carousel
 }
 // End Image Select //
 
