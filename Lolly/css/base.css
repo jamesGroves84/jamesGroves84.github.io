@@ -31,3 +31,10 @@
     transition: bottom .25s ease-in-out!important;
     z-index: 2000!important;
 }
+
+progress {
+    width: 100%;
+    z-index: 1020;
+    position: fixed;
+    bottom: 0;
+}
