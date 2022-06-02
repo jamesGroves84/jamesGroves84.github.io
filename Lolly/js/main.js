@@ -98,7 +98,7 @@ function getImgs() {
     carouselWrap.appendChild(carouselPrevButton);
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
-    setActiveImg();
+    window.setTimeout(setActiveImg(),500);
 };
 
 function setActiveImg(){
