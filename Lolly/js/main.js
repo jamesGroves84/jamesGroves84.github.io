@@ -117,5 +117,5 @@ function endShow() {
     // Hide the Exit Slideshow button
     document.getElementById('endSlideshow').classList.remove('blap');
     // Clear the Selected Files list
-    document.getElementById('imgPicker').files = undefined;
+    document.getElementById('imgPicker').value = null;
 }
