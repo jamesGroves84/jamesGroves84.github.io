@@ -111,7 +111,7 @@ function setActiveImg(){
     carousel.cycle(); // Start the Carousel
 
     // Trigger wakeLock
-    if('wakeLock' in navigator) navigator.wakeLock.request('screen');
+    if('wakeLock' in navigator) navigator.wakeLock.request('display');
 }
 // End Image Select //
 
