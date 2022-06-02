@@ -74,7 +74,6 @@ function getImgs() {
         imageReader.addEventListener('load', function() {
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
-            if(i == 0) carouselItem.classList.add('active');
         });
 
         imageReader.addEventListener('progress', function(data){
@@ -91,6 +90,8 @@ function getImgs() {
             carouselItem.style.backgroundRepeat = "no-repeat";
             carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
+
+            setActiveImg();
         });
     };
 
