@@ -90,7 +90,7 @@ function getImgs() {
             }
         });
 
-        imageReader.addEventListener('loaded', function(){
+        imageReader.addEventListener('loadend', function(){
             document.querySelector('.imageLoader').classList.remove('shown');
         });
     };
