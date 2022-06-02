@@ -63,14 +63,15 @@ function getImgs() {
 
     document.querySelector('.imageLoader').classList.add('shown');
 
-    for(var i = 0; i < imgs.length; i++) {
+    imgs.forEach((img, idx) => {
         const imageReader = new FileReader();
-        imageReader.fileName = imgs[i].name;
-        imageReader.readAsDataURL(imgs[i]);
+        imageReader.fileName = img.name;
+        imageReader.readAsDataURL(img);
 
         imageReader.addEventListener('load', function() {
             var carouselItem = document.createElement('div')
             carouselItem.classList.add('carousel-item');
+            if(idx == 0) carouselItem.classList.add('active');
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
             /* Center and scale the image nicely */
@@ -92,18 +93,18 @@ function getImgs() {
         imageReader.addEventListener('loadend', function(){
             document.querySelector('.imageLoader').classList.remove('shown');
         });
-    };
+    });
 
     carouselWrap.appendChild(carouselInner);
     carouselWrap.appendChild(carouselPrevButton);
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
-    window.setTimeout(setActiveImg(),500);
+    window.setTimeout(setActiveImg,500);
 };
 
 function setActiveImg(){
     // Set first image as active
-    document.getElementsByClassName('carousel-item')[0].classList.add('active');
+    // document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
 
     const carousel = new bootstrap.Carousel('#carouselWrappy');
