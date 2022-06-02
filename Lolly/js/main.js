@@ -77,6 +77,7 @@ function getImgs() {
             carouselItem.style.backgroundPosition = "center";
             carouselItem.style.backgroundRepeat = "no-repeat";
             carouselItem.style.backgroundSize = "cover";
+            carouselInner.appendChild(carouselItem); 
         });
 
         imageReader.addEventListener('progress', function(data){
@@ -88,8 +89,6 @@ function getImgs() {
         });
 
         imageReader.addEventListener('loadend', function(){
-            carouselInner.appendChild(carouselItem); 
-
             setActiveImg();
         });
     };
