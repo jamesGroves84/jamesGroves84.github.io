@@ -96,7 +96,7 @@ function getImgs() {
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
 
-    setTimeout(setActiveImg, 500);
+    setActiveImg;
 };
 
 function setActiveImg(){
