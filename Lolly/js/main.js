@@ -63,17 +63,20 @@ function getImgs() {
 
     document.querySelector('.imageLoader').classList.add('shown');
 
-    var carouselItem = document.createElement('div')
-    carouselItem.classList.add('carousel-item');
-
     for(var i = 0; i < imgs.length; i++) {
         const imageReader = new FileReader();
         imageReader.fileName = imgs[i].name;
         imageReader.readAsDataURL(imgs[i]);
 
         imageReader.addEventListener('load', function() {
+            var carouselItem = document.createElement('div')
+            carouselItem.classList.add('carousel-item');
             carouselItem.innerHTML ='<img class="d-block" src="'+this.result+'" alt="'+this.fileName+'">';
             carouselItem.style.backgroundImage = "url('"+this.result+"')";
+            /* Center and scale the image nicely */
+            carouselItem.style.backgroundPosition = "center";
+            carouselItem.style.backgroundRepeat = "no-repeat";
+            carouselItem.style.backgroundSize = "cover";
         });
 
         imageReader.addEventListener('progress', function(data){
@@ -85,10 +88,6 @@ function getImgs() {
         });
 
         imageReader.addEventListener('loadend', function(){
-            /* Center and scale the image nicely */
-            carouselItem.style.backgroundPosition = "center";
-            carouselItem.style.backgroundRepeat = "no-repeat";
-            carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
 
             setActiveImg();
