@@ -109,6 +109,9 @@ function setActiveImg(){
 
     const carousel = new bootstrap.Carousel('#carouselWrappy');
     carousel.cycle(); // Start the Carousel
+
+    // Trigger wakeLock
+    if('wakeLock' in navigator) navigator.wakeLock.request('screen');
 }
 // End Image Select //
 
