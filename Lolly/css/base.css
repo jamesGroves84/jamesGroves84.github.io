@@ -42,7 +42,7 @@
 }
 
 .imageLoader .shown {
-    display: block;
+    display: block!important;
 }
 
 progress {
