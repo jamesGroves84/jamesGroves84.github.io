@@ -41,7 +41,7 @@
     display: none;
 }
 
-.imageLoader + .shown {
+.imageLoader.shown {
     display: block!important;
 }
 
