@@ -16,7 +16,7 @@ document.getElementById('imgPicker').addEventListener('change', function(){
 });
 
 function getImgs() {
-    var imgs = document.getElementById('imgPicker').files;
+    var imgs = [...document.getElementById('imgPicker').files];
 
     var carouselWrap = document.createElement('div');
     carouselWrap.id = 'carouselWrappy';
