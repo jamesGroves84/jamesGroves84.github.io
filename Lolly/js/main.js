@@ -81,14 +81,6 @@ function getImgs() {
             carouselItem.style.backgroundSize = "cover";
             carouselInner.appendChild(carouselItem); 
         });
-
-        imageReader.addEventListener('progress', function(data){
-            if (data.lengthComputable) {                                            
-                var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-                document.getElementById('imageLoading').innerHTML = "Loading: "+this.fileName;
-                document.getElementById('progressbar').value = progress;
-            }
-        });
     };
 
     carouselWrap.appendChild(carouselInner);
@@ -96,7 +88,17 @@ function getImgs() {
     carouselWrap.appendChild(carouselNextButton);
     document.getElementById('carousel-container').appendChild(carouselWrap);
 
-    setActiveImg();
+    imageReader.addEventListener('progress', function(data){
+        if (data.lengthComputable) {                                            
+            var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
+            document.getElementById('imageLoading').innerHTML = "Loading: "+this.fileName;
+            document.getElementById('progressbar').value = progress;
+        }
+    });
+
+    imageReader.addEventListener('loadend', function(){
+        setActiveImg();
+    });
 };
 
 function setActiveImg(){
