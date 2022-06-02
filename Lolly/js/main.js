@@ -89,10 +89,6 @@ function getImgs() {
                 document.getElementById('progressbar').value = progress;
             }
         });
-
-        imageReader.addEventListener('loadend', function(){
-            document.querySelector('.imageLoader').classList.remove('shown');
-        });
     };
 
     carouselWrap.appendChild(carouselInner);
@@ -107,6 +103,7 @@ function setActiveImg(){
     // Set first image as active
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
+    document.querySelector('.imageLoader').classList.remove('shown');
 }
 // End Image Select //
 
