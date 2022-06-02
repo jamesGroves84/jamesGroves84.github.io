@@ -22,7 +22,6 @@ function getImgs() {
     carouselWrap.id = 'carouselWrappy';
     carouselWrap.classList.add('carousel');
     carouselWrap.classList.add('slide');
-    carouselWrap.setAttribute("data-bs-ride","carousel");
     carouselWrap.setAttribute("data-bs-pause","false");
 
     var carouselInner = document.createElement('div');
@@ -105,6 +104,7 @@ function setActiveImg(){
     document.getElementsByClassName('carousel-item')[0].classList.add('active');
     document.getElementById('endSlideshow').classList.add('blap');
     document.querySelector('.imageLoader').classList.remove('shown');
+    const carousel = new bootstrap.Carousel('#carouselWrappy');
 }
 // End Image Select //
 
