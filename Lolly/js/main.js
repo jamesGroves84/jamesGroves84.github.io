@@ -111,7 +111,12 @@ function setActiveImg(){
     carousel.cycle(); // Start the Carousel
 
     // Trigger wakeLock
-    if('wakeLock' in navigator) navigator.wakeLock.request('display');
+    try {
+        const wakeLock = await navigator.wakeLock.request('screen');
+    } catch (err) {
+        // the wake lock request fails - usually system related, such being low on battery
+        console.log(`${err.name}, ${err.message}`);
+    }
 }
 // End Image Select //
 
